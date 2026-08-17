@@ -67,7 +67,8 @@ body{
   overflow:hidden;
 }
 /* the warm field the heart sits on */
-.hero__bg{
+
+/* .hero__bg{
   position:absolute; inset:0;
   background:
     radial-gradient(120% 88% at 50% 24%, #fff8f1 0%, var(--paper-0) 38%, var(--paper-1) 74%, var(--paper-2) 100%);
@@ -77,8 +78,64 @@ body{
   width:min(78vw,720px); aspect-ratio:1; transform:translate(-50%,-50%);
   background:radial-gradient(circle, rgba(255,190,150,.55), rgba(255,150,170,.16) 46%, transparent 70%);
   filter:blur(6px);
+} */
+
+.hero__bg{
+  position:absolute;
+  inset:0;
+  overflow:hidden;
+
+  background:
+    radial-gradient(
+      120% 88% at 50% 24%,
+      #fff8f1 0%,
+      var(--paper-0) 38%,
+      var(--paper-1) 74%,
+      var(--paper-2) 100%
+    );
 }
 
+/* Girl's photo — soft, blurred and dreamy */
+.hero__bg::before{
+  content:"";
+  position:absolute;
+  inset:-30px;
+
+  background:
+    linear-gradient(
+      rgba(255,225,232,.55),
+      rgba(255,210,220,.55)
+    ),
+    url('/textures/girl.jpeg') center/cover no-repeat;
+
+  filter:blur(18px);
+  opacity:.32;
+  transform:scale(1.08);
+
+  z-index:0;
+}
+
+/* Your existing warm light behind the heart */
+.hero__bg::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:44%;
+  width:min(78vw,720px);
+  aspect-ratio:1;
+  transform:translate(-50%,-50%);
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,190,150,.55),
+      rgba(255,150,170,.16) 46%,
+      transparent 70%
+    );
+
+  filter:blur(6px);
+  z-index:1;
+}
 /* drifting light motes (JS fills this with a few spans) */
 .hero__motes{ position:absolute; inset:0; pointer-events:none; }
 .mote{
