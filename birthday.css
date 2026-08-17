@@ -97,8 +97,8 @@ body{
     ),
     url('/textures/girl.jpeg') center/cover no-repeat;
 
-  filter:blur(18px);
-  opacity:.32;
+  filter:blur(2px);
+  opacity:.9;
   transform:scale(1.08);
 
   z-index:0;
