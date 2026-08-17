@@ -809,6 +809,16 @@ function fire(){
   played = true;
   drawing = false;
   stopBeat();
+
+  if (bgMusic) {
+    bgMusic.volume = 0.7;
+
+    bgMusic.play().then(() => {
+      console.log("🎵 Birthday music started");
+    }).catch((error) => {
+      console.error("🎵 Music failed:", error);
+    });
+  }
   cue('release'); cue('whoosh');
   filmTL = buildFilm(shotGeom());
   filmTL.play(0);
