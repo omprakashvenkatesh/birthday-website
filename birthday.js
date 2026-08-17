@@ -51,6 +51,7 @@ const aim        = $('aim');
 
 const archery = $('archery');
 const bow     = $('bow');
+const bgMusic = $('bgMusic');
 const arrow   = $('arrow');
 const strL    = $('strL');
 const strR    = $('strR');
@@ -830,6 +831,14 @@ function autoFire(){
 
 archery.addEventListener('pointerdown', (e) => {
   if (played) return;
+
+    // Start birthday music on the first interaction
+  if (bgMusic && bgMusic.paused) {
+    bgMusic.volume = 0.7;
+    bgMusic.play().catch(err => {
+      console.log("Music could not start:", err);
+    });
+  }
   drawing = true;
   try { archery.setPointerCapture(e.pointerId); } catch (_) {}
   startPX = e.clientX; startPY = e.clientY; startDraw = curDraw;
