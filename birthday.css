@@ -68,17 +68,6 @@ body{
 }
 /* the warm field the heart sits on */
 
-/* .hero__bg{
-  position:absolute; inset:0;
-  background:
-    radial-gradient(120% 88% at 50% 24%, #fff8f1 0%, var(--paper-0) 38%, var(--paper-1) 74%, var(--paper-2) 100%);
-}
-.hero__bg::after{               /* a soft warm pool of light behind the heart */
-  content:""; position:absolute; left:50%; top:44%;
-  width:min(78vw,720px); aspect-ratio:1; transform:translate(-50%,-50%);
-  background:radial-gradient(circle, rgba(255,190,150,.55), rgba(255,150,170,.16) 46%, transparent 70%);
-  filter:blur(6px);
-} */
 
 .hero__bg{
   position:absolute;
